@@ -4,7 +4,6 @@ const ProductManager = require("../../../manager/manajers");
 const manager = new ProductManager("products.json");
 
 
-//RUTAS
 // GET -> trae todos los productos
 router.get("/", async (req, res) => {
   const products = await manager.getItems();
@@ -29,7 +28,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//  GET -> trae un prod en especifico
+//  GET -> trae un prod especifico
 router.get("/:pid", async (req, res) => {
   const pid = Number(req.params.pid);
   const data = await manager.getItemById(pid);

@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
   });
 });
 
-// GET -> trae un cart en especifico
+// GET -> trae un cart especifico
 router.get("/:cid", async (req, res) => {
   const cid = Number(req.params.cid);
 
@@ -27,7 +27,8 @@ router.get("/:cid", async (req, res) => {
 
 
 
-// POST -> cid/produc/pid agrega un prod a un cart ya creado. si ya existe ese prod solo se agrega uno en la cantidad
+// POST -> cid/produc/pid agrega un prod a un cart ya creado. 
+//si ya existe ese prod solo se agrega uno en la cantidad
 router.post("/:cid/product/:pid", async (req, res) => {
   const cid = Number(req.params.cid);
   const pid = Number(req.params.pid);
