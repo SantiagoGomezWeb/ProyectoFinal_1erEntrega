@@ -1,0 +1,35 @@
+[
+	{
+		"id": 1,
+		"title": "new-title",
+		"description": "description",
+		"code": "asd",
+		"price": "1000",
+		"status": "true",
+		"stock": "25",
+		"category": "category",
+		"thumbnails": "[]"
+	},
+	{
+		"id": 2,
+		"title": "title",
+		"description": "description",
+		"code": "asd",
+		"price": "1000",
+		"status": "true",
+		"stock": "25",
+		"category": "category",
+		"thumbnails": "[]"
+	},
+	{
+		"id": 4,
+		"title": "product3",
+		"description": "description 3",
+		"code": "3",
+		"price": "3000",
+		"status": "true",
+		"stock": "250",
+		"category": "category",
+		"thumbnails": "[]"
+	}
+]
