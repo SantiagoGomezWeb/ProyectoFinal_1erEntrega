@@ -11,5 +11,14 @@
   "dependencies": {
     "express": "^4.18.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiagoGomezWeb/ProyectoFinal_1erEntrega.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SantiagoGomezWeb/ProyectoFinal_1erEntrega/issues"
+  },
+  "homepage": "https://github.com/SantiagoGomezWeb/ProyectoFinal_1erEntrega#readme",
+  "devDependencies": {},
   "description": ""
 }

@@ -19,13 +19,14 @@ class ProductManager {
 
   async getItemById(id) {
     const items = await this.getItems();
-    const itemSelected = items.find((item) => item.id === id);
+    const itemSelected = items.find((item) => item.orderId === id);
     if (itemSelected) {
       return itemSelected;
     } else {
       console.log("Product not found");
     }
   }
+
 
   // PRODUCTS
   async addProduct(product) {
@@ -78,7 +79,8 @@ class ProductManager {
     let cart = await this.getItems();
 
     //busca si existe algun obj dentro de cart con un order id === al cid
-    const order = cart.find((o) => o.orderId === cid);
+     const order = cart.find((o) => o.orderId === cid);
+    // const order = cart.find((o) => o.Id === cid);
 
     //si existe empieza a bscar dentro de productos
     if (order) {
@@ -87,6 +89,7 @@ class ProductManager {
       //si el producto existe le suma 1 en cantidad
       if (productExist) {
         const orderPosition = cart.findIndex((order) => order.orderId === cid);
+        // const orderPosition = cart.findIndex((order) => order.Id === cid);
         const updateProduct = cart[orderPosition].products.find(
           (prod) => prod.prodId === pid
         );
@@ -103,7 +106,8 @@ class ProductManager {
       } else {
         const newProduct = { prodId: pid, quantity: 1 };
         const orderPosition = cart.findIndex((order) => order.orderId === cid);
-        if (orderPosition <= 0) {
+        // const orderPosition = cart.findIndex((order) => order.Id === cid);
+        if (orderPosition >= 0) {
           cart[orderPosition].products.push(newProduct);
           await this.writeFile(cart);
           return cart;
@@ -113,6 +117,7 @@ class ProductManager {
       // como no existe el id de la orden se agrega uno nuevo
       const newOrder = {
         orderId: cart.length + 1,
+        // Id: cart.length + 1,
         products: [{ prodId: pid, quantity: 1 }],
       };
       cart.push(newOrder);
